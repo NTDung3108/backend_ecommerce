@@ -1,0 +1,18 @@
+				HOA DON BAN HANG
+				Ma hoa don: 1
+Ten cua hang:
+Dia chi: abc-xyz
+
+
+Ten khach hang: Trung Trung
+Dia chi: abc-xyz
+So dien thoai: 5555555555
+┍━━┑━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑━━━┑━━━━━━━━━━━━━━━━━━┑━━━━━━━━━━━━━━━━━━━┑
+│st|ten san pham                                        │sl │price             |amount             |
+│1 |Chuột Fuhlen G90 Black                              │1  │490000            |490000             |
+│2 |Chuột Logitech G903 Hero Lightspeed Wireless        │1  │2990000           |2990000            |
+┗━━┙━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙━━━┙━━━━━━━━━━━━━━━━━━┙━━━━━━━━━━━━━━━━━━━┙
+
+ Tong gia: 3480000 [ da thanh toan ]
+ 					     Ngay 09 thang 06 nam 2022 
+	 Khach Hang 				Nguoi viet hoa don

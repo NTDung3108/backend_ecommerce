@@ -1,0 +1,17 @@
+				HOA DON BAN HANG
+				Ma hoa don: 5
+Ten cua hang:
+Dia chi: abc-xyz
+
+
+Ten khach hang: Viet Dung
+Dia chi: abc,xyz
+So dien thoai: 6666666666
+┍━━┑━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑━━━┑━━━━━━━━━━━━━━━━━━┑━━━━━━━━━━━━━━━━━━━┑
+│st|ten san pham                                        │sl │price             |amount             |
+│1 |Bàn phím cơ Fuhlen Eraser                         │1  │800000            |800000             |
+┗━━┙━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙━━━┙━━━━━━━━━━━━━━━━━━┙━━━━━━━━━━━━━━━━━━━┙
+
+ Tong gia: 800000 [ da thanh toan ]
+ 					     Ngay 09 thang 06 nam 2022 
+	 Khach Hang 				Nguoi viet hoa don
