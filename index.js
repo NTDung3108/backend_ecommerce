@@ -7,9 +7,9 @@ const io = require('socket.io')(server);
 
 require('dotenv').config();
 var port = 3000;
-// var host = '192.168.2.151';
+var host = '192.168.2.151';
 // var host = '192.168.2.101';
-var host = '10.50.10.135';
+// var host = '10.50.10.135';
 
 //'10.50.10.135';//
 

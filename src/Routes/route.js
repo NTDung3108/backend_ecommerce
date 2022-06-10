@@ -10,9 +10,9 @@ const { changePhotoProfile, userPersonalRegister, getPersonalInformation,
 const { uploadsProfile, uploadManyFiles, uploadsBrands} = require('../Helpers/Multer');
 const { ListProductsHome, ListCategoriesAll, ListCategoriesHome, ListSubCategoriesAll,
      ListDiscaountBannerHome, ListSubcategoriesHome, getAllSubCategories} = require('../Controller/HomeController');
-const { addFavoriteProduct, productFavoriteForUser, saveOrderProducts, getPurchasedProduct, 
-    getProductsForCategories, getBrandList, getAllProducts, checkQuantityProduct, getDetailOders,
-    updateOrderStatus, getProductDetail} = require('../Controller/ProductsController');
+const { addFavoriteProduct, productFavoriteForUser, getProductsForCategories, 
+       getBrandList, getAllProducts, checkQuantityProduct, getProductDetail} = require('../Controller/ProductsController');
+const { saveOrderProducts, getPurchasedProduct, getDetailOders, updateOrderStatus} = require('../Controller/OrderController');
 const { addNewProduct, deleteProduct, getProductById, getAllProductStaff} = require('../Controller/ProductsControllerStaff');
 const { addNewBrands, getAllBrands, deleteBrands } = require('../Controller/BrandsControllerStaff');
 const { getAllOrders, revenueStatistics, exportInvoice, getOrderDetail} = require('../Controller/OrdersControllerStaff');
@@ -134,10 +134,10 @@ router.get('/api/get-all-discount', getAllDiscount);
 
 router.get('/api/get-rating/:productId', validateToken, getRating);
 
-router.get('/api/get-all-order', [validateToken, cors()], getAllOrders);
+router.get('/api/get-all-order', /*[validateToken, cors()],*/ getAllOrders);
 router.get('/api/revenue-statistics', [validateToken, cors()], revenueStatistics);
 router.get('/api/export_invoice/:orderId',cors(), exportInvoice);
-router.get('/api/order_details/:orderId', [validateToken, cors()], getOrderDetail);
+router.get('/api/order_details/:orderId', /*[validateToken, cors()],*/ getOrderDetail);
 
 router.get('/api/revenue-month', [validateToken, cors()], revenue);
 router.get('/api/sum-product', [validateToken, cors()], sumProduct);

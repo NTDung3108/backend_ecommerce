@@ -11,8 +11,6 @@ const validateToken = async ( req, res, next ) => {
         return res.status(401).json({
             resp: false,
             msj : "There is not Token in the request",
-            userid: uid,
-            token: 'Invalid Token'
         });
     }
 
@@ -33,8 +31,6 @@ const validateToken = async ( req, res, next ) => {
         return res.status(401).json({
             resp: false,
             msj : 'Invalid Token',
-            userid: uid,
-            token: 'Invalid Token'
         });
     }
 

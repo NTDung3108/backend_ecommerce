@@ -52,8 +52,7 @@ var categories_storage = multer.diskStorage({
     callback(null, filename);
   }
 });
-// Khởi tạo middleware uploadManyFiles với cấu hình như ở trên,
-// Bên trong hàm .array() truyền vào name của thẻ input, ở đây mình đặt là "many-files", và tham số thứ hai là giới hạn số file được phép upload mỗi lần, mình sẽ để là 17 (con số mà mình yêu thích). Các bạn thích để bao nhiêu cũng được.
+
 const uploadPictures = multer({storage: categories_storage});
 
 const uploadsDiscount = multer({ storage: discount_storage });
