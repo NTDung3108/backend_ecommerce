@@ -9,6 +9,7 @@ const getAllOrders = async (req, res = response, next) => {
         const row = await pool.query(`CALL SP_GET_ALL_ORDERS();`);
         const orders = row[0];
 
+        console.log(orders);
         if (orders.length == 0) {
             return res.status(200).json({
                 resp: true,
@@ -18,10 +19,9 @@ const getAllOrders = async (req, res = response, next) => {
         }
 
         for (i = 0; i < orders.length; i++) {
-            var a = moment.tz(orders[i].datee, "Asia/Ho_Chi_Minh");
-            console.log(a.format('DD/MM/yyyy HH:mm:ss'));
-
-            orders[i].datee = a.format('DD/MM/yyyy HH:mm:ss');
+            var date = new Date(orders[i].datee * 1000).toLocaleString();
+            orders[i].datee = date
+            console.log(orders[i].datee);
         }
         return res.status(200).json({
             resp: true,

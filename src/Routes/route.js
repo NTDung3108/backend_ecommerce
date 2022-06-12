@@ -11,7 +11,7 @@ const { uploadsProfile, uploadManyFiles, uploadsBrands} = require('../Helpers/Mu
 const { ListProductsHome, ListCategoriesAll, ListCategoriesHome, ListSubCategoriesAll,
      ListDiscaountBannerHome, ListSubcategoriesHome, getAllSubCategories} = require('../Controller/HomeController');
 const { addFavoriteProduct, productFavoriteForUser, getProductsForCategories, 
-       getBrandList, getAllProducts, checkQuantityProduct, getProductDetail} = require('../Controller/ProductsController');
+       getBrandList, getAllProducts, checkQuantityProduct, getProductDetail, updateQuantityProduct} = require('../Controller/ProductsController');
 const { saveOrderProducts, getPurchasedProduct, getDetailOders, updateOrderStatus} = require('../Controller/OrderController');
 const { addNewProduct, deleteProduct, getProductById, getAllProductStaff} = require('../Controller/ProductsControllerStaff');
 const { addNewBrands, getAllBrands, deleteBrands } = require('../Controller/BrandsControllerStaff');
@@ -84,10 +84,13 @@ router.get('/api/get-purchased-products', validateToken, getPurchasedProduct);
 router.get('/api/get-products-for-subcategories/:id', getProductsForCategories);
 router.get('/api/get-brands-list/:subCategoryId', getBrandList);
 router.get('/api/get-all-product', getAllProducts);
-router.put('/api/update-quantity-product', validateToken, checkQuantityProduct);
-router.get('/api/get-detail-by-id/:orderId', validateToken, getDetailOders);
+router.get('/api/check-quantity-product', /*validateToken,*/ checkQuantityProduct);
+router.get('/api/get-detail-by-id/:orderId'/*, validateToken*/, getDetailOders);
 router.put('/api/update-order-status', validateToken, updateOrderStatus);
+
 router.get('/api/get-detail-product/:productId', getProductDetail);
+
+router.put('/api/update-quantity-product', updateQuantityProduct);
 
 router.get('/api/get-avg-rating/:productId', getAVGRating);
 router.post('/api/new-rating', addNewRating);
@@ -134,14 +137,14 @@ router.get('/api/get-all-discount', getAllDiscount);
 
 router.get('/api/get-rating/:productId', validateToken, getRating);
 
-router.get('/api/get-all-order', /*[validateToken, cors()],*/ getAllOrders);
-router.get('/api/revenue-statistics', [validateToken, cors()], revenueStatistics);
+router.get('/api/get-all-order', cors(),/*[validateToken, cors()],*/ getAllOrders);
+router.get('/api/revenue-statistics', cors() ,/*[validateToken, cors()],*/ revenueStatistics);
 router.get('/api/export_invoice/:orderId',cors(), exportInvoice);
-router.get('/api/order_details/:orderId', /*[validateToken, cors()],*/ getOrderDetail);
+router.get('/api/order_details/:orderId', /*[validateToken, cors()],*/cors() , getOrderDetail);
 
-router.get('/api/revenue-month', [validateToken, cors()], revenue);
-router.get('/api/sum-product', [validateToken, cors()], sumProduct);
-router.get('/api/sum-order', [validateToken, cors()], sumOrder);
-router.get('/api/top-Products', [validateToken, cors()], topProduct);
+router.get('/api/revenue-month',cors(),/* [validateToken, cors()],*/ revenue);
+router.get('/api/sum-product',cors(), /*[validateToken, cors()],*/ sumProduct);
+router.get('/api/sum-order', cors(),/*[validateToken, cors()],*/ sumOrder);
+router.get('/api/top-Products',cors(),/* [validateToken, cors()],*/ topProduct);
 
 module.exports = router;

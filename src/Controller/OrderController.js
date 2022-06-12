@@ -4,7 +4,7 @@ var moment = require('moment-timezone');
 
 const saveOrderProducts = async (req, res = response) => {
     try {
-        const { status, date, amount, address, note, payment, products } = req.body;
+        const { status, date, amount, address, note, payment, tax, totalOriginal, datee2, products } = req.body;
         const uid = req.uid;
 
         if (status == undefined || date == undefined || amount == undefined
@@ -14,15 +14,15 @@ const saveOrderProducts = async (req, res = response) => {
                 msj: 'Somthing Wrong'
             });
         } else {
+            console.log(req.body);
+            console.log(products[0]);
 
-            const db = await pool.query('INSERT INTO orderBuy (user_id, status, datee, amount, address, note, payment) VALUES (?,?,?,?,?,?,?)', [uid, status, date, amount, address, note, payment]);
-
-            console.log(db);
+            const db = await pool.query('INSERT INTO orderBuy (user_id, status, datee, amount, address, note, payment, tax, total_original, datee2) VALUES (?,?,?,?,?,?,?,?,?,?)', [uid, status, date, amount, address, note, payment, tax, totalOriginal, datee2]);
 
             console.log(products[0]);
 
             products.forEach(e => {
-                pool.query('INSERT INTO orderDetails (orderBuy_id, product_id, quantity, price) VALUES(?,?,?,?)', [db.insertId, e.uidProduct, e.amount, e.price]);
+                pool.query('INSERT INTO orderDetails (orderBuy_id, product_id, quantity, price) VALUES(?,?,?,?)', [db.insertId, e.uidProduct, e.quantity, e.price]);
             });
 
             return res.status(200).json({
